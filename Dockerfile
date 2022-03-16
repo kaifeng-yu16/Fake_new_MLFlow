@@ -4,7 +4,7 @@ RUN mkdir -p /app
 ENV MLFLOW_TRACKING_URI=databricks
 COPY ./requirements.txt /app/requirements.txt
 COPY ./main.py /app/
-RUN python download-model.py
+RUN python download_model.py
 COPY model/ /app/model/
 RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 WORKDIR /app
